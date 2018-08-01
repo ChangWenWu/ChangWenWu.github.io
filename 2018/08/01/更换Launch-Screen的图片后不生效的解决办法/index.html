@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>更换Launch-Screen的图片后不生效的解决办法 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="公司产品升级需更换新的启动页在Images.xcassets文件夹中将图片替换后发现在某些系统上还是使用的旧图标这是苹果的一个bug，当Launch Screen.storyboard引用了Images.xcassets之后就会出现这个问题最快的解决办法就是卸载应用，重启设备，重装应用，启动页可替换但是app上线后不可能让用户做这个操作啊，会被产品和技术支持diss还有一个解决办法就是不使用Ima">
+<meta property="og:type" content="article">
+<meta property="og:title" content="更换Launch-Screen的图片后不生效的解决办法">
+<meta property="og:url" content="http://yoursite.com/2018/08/01/更换Launch-Screen的图片后不生效的解决办法/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="公司产品升级需更换新的启动页在Images.xcassets文件夹中将图片替换后发现在某些系统上还是使用的旧图标这是苹果的一个bug，当Launch Screen.storyboard引用了Images.xcassets之后就会出现这个问题最快的解决办法就是卸载应用，重启设备，重装应用，启动页可替换但是app上线后不可能让用户做这个操作啊，会被产品和技术支持diss还有一个解决办法就是不使用Ima">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/4325169-b5e9b95288a30bf4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/4325169-89a86632d18ebba3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/4325169-24be01b855c678a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-08-01T10:24:09.013Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="更换Launch-Screen的图片后不生效的解决办法">
+<meta name="twitter:description" content="公司产品升级需更换新的启动页在Images.xcassets文件夹中将图片替换后发现在某些系统上还是使用的旧图标这是苹果的一个bug，当Launch Screen.storyboard引用了Images.xcassets之后就会出现这个问题最快的解决办法就是卸载应用，重启设备，重装应用，启动页可替换但是app上线后不可能让用户做这个操作啊，会被产品和技术支持diss还有一个解决办法就是不使用Ima">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/4325169-b5e9b95288a30bf4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-更换Launch-Screen的图片后不生效的解决办法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/01/更换Launch-Screen的图片后不生效的解决办法/" class="article-date">
+  <time datetime="2018-08-01T10:22:29.000Z" itemprop="datePublished">2018-08-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      更换Launch-Screen的图片后不生效的解决办法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>公司产品升级需更换新的启动页<br>在Images.xcassets文件夹中将图片替换后发现在某些系统上还是使用的旧图标<br>这是苹果的一个bug，当Launch Screen.storyboard引用了Images.xcassets之后就会出现这个问题<br>最快的解决办法就是卸载应用，重启设备，重装应用，启动页可替换<br>但是app上线后不可能让用户做这个操作啊，会被产品和技术支持diss<br>还有一个解决办法就是不使用Images.xcassets，改用直接引用图片文件<br>1.项目中添加png图片文件<br><img src="https://upload-images.jianshu.io/upload_images/4325169-b5e9b95288a30bf4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>2.storyboard中引用该图片<br><img src="https://upload-images.jianshu.io/upload_images/4325169-89a86632d18ebba3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>3.取消勾选Clears Graphics Context选项<br><img src="https://upload-images.jianshu.io/upload_images/4325169-24be01b855c678a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/01/更换Launch-Screen的图片后不生效的解决办法/" data-id="cjkazmcf4000a4s15q8cwae83" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/08/01/使用AFNetworking库后设置HTTP代理出错/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          使用AFNetworking库后设置HTTP代理出错
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/08/01/使子视图超出父视图之外的部分也可以响应事件/">使子视图超出父视图之外的部分也可以响应事件</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/01/Mac开发监听默认音频设备的变化/">Mac开发监听默认音频设备的变化</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/01/Mac开发中检测中文输入法是否完成拼写/">Mac开发中检测中文输入法是否完成拼写</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/01/Raywenderlich-的-Swift-代码规范/">Raywenderlich 的 Swift 代码规范</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/01/Rxswift和RxCocoa中何时使用unowned和weak/">Rxswift和RxCocoa中何时使用unowned和weak</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
