@@ -86,14 +86,14 @@
 <meta property="og:site_name" content="吴昌文">
 <meta property="og:description" content="公司应用发布上线后有一个只在iOS10.3系统下的高频崩溃，通过崩溃日志定位到的崩溃行为：该崩溃为访问了野指针szHeaders造成的崩溃经过代码检查发现经过调试发现指针被声明时即置为空指针我将Xcode的build设置为Release后复现出该崩溃，指针声明未初始化时指向一块位置内存区域，导致野指针崩溃在StackOverFlow上有该回答： 即Release模式下指针声明时不会置为空指针指针声">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/4325169-f760dc3369ea6bfe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/4325169-8f65a8f125310ec1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/4325169-5c8f7e5fa210f382.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-01-17T07:05:30.191Z">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fz9o804zysj30yg0b0gmz.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fz9o89higjj30h4039gm2.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fz9o8kdg7lj30ln08ojsz.jpg">
+<meta property="og:updated_time" content="2019-01-17T08:41:21.836Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS10-3系统Release模式下下未初始化指针导致崩溃">
 <meta name="twitter:description" content="公司应用发布上线后有一个只在iOS10.3系统下的高频崩溃，通过崩溃日志定位到的崩溃行为：该崩溃为访问了野指针szHeaders造成的崩溃经过代码检查发现经过调试发现指针被声明时即置为空指针我将Xcode的build设置为Release后复现出该崩溃，指针声明未初始化时指向一块位置内存区域，导致野指针崩溃在StackOverFlow上有该回答： 即Release模式下指针声明时不会置为空指针指针声">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/4325169-f760dc3369ea6bfe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fz9o804zysj30yg0b0gmz.jpg">
 
 
 
@@ -303,7 +303,7 @@
       
 
       
-        <p>公司应用发布上线后有一个只在iOS10.3系统下的高频崩溃，通过崩溃日志定位到的崩溃行为：<br><img src="https://upload-images.jianshu.io/upload_images/4325169-f760dc3369ea6bfe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>该崩溃为访问了野指针szHeaders造成的崩溃<br>经过代码检查发现<br><img src="https://upload-images.jianshu.io/upload_images/4325169-8f65a8f125310ec1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>经过调试发现指针被声明时即置为空指针<br>我将Xcode的build设置为Release后复现出该崩溃，指针声明未初始化时指向一块位置内存区域，导致野指针崩溃<br>在StackOverFlow上有该回答：<br><img src="https://upload-images.jianshu.io/upload_images/4325169-5c8f7e5fa210f382.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+        <p>公司应用发布上线后有一个只在iOS10.3系统下的高频崩溃，通过崩溃日志定位到的崩溃行为：<br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fz9o804zysj30yg0b0gmz.jpg" alt="image.png"><br>该崩溃为访问了野指针szHeaders造成的崩溃<br>经过代码检查发现<br><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fz9o89higjj30h4039gm2.jpg" alt="image.png"><br>经过调试发现指针被声明时即置为空指针<br>我将Xcode的build设置为Release后复现出该崩溃，指针声明未初始化时指向一块位置内存区域，导致野指针崩溃<br>在StackOverFlow上有该回答：<br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fz9o8kdg7lj30ln08ojsz.jpg" alt="image.png"></p>
 <p>即Release模式下指针声明时不会置为空指针<br>指针声明时立即初始化赋值即解决该崩溃（开发习惯）<br>另外遇到线上的崩溃复现不了时应考虑是否为Release模式和Debug模式之间的区别导致的</p>
 
       
