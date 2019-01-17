@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="MVVM,ReactiveCocoa,函数式编程," />
 
 
 
@@ -80,6 +80,7 @@
 
 
 <meta name="description" content="学习函数式编程已经有一个半月了，学习了RxSwift和RAC2.X，尝试过写一些小的demo，但是一直没有了解过MVVM中是如何使用RAC进行通信的，由于公司项目准备使用MVVM+RAC模式重构，在github找到了使用MVVM+RAC构建的Github开源app：GitBucket，本文主要记录该项目中RAC在MVVM模式中的应用。 项目类图项目中主要有两大继承体系：MRCViewModel和M">
+<meta name="keywords" content="MVVM,ReactiveCocoa,函数式编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GitBucket源码阅读笔记">
 <meta property="og:url" content="http://yoursite.com/2018/11/24/GitBucket源码阅读笔记/index.html">
@@ -87,7 +88,7 @@
 <meta property="og:description" content="学习函数式编程已经有一个半月了，学习了RxSwift和RAC2.X，尝试过写一些小的demo，但是一直没有了解过MVVM中是如何使用RAC进行通信的，由于公司项目准备使用MVVM+RAC模式重构，在github找到了使用MVVM+RAC构建的Github开源app：GitBucket，本文主要记录该项目中RAC在MVVM模式中的应用。 项目类图项目中主要有两大继承体系：MRCViewModel和M">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fz9o7e3uelj30u01jhb29.jpg">
-<meta property="og:updated_time" content="2019-01-17T08:40:09.126Z">
+<meta property="og:updated_time" content="2019-01-17T09:38:34.094Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitBucket源码阅读笔记">
 <meta name="twitter:description" content="学习函数式编程已经有一个半月了，学习了RxSwift和RAC2.X，尝试过写一些小的demo，但是一直没有了解过MVVM中是如何使用RAC进行通信的，由于公司项目准备使用MVVM+RAC模式重构，在github找到了使用MVVM+RAC构建的Github开源app：GitBucket，本文主要记录该项目中RAC在MVVM模式中的应用。 项目类图项目中主要有两大继承体系：MRCViewModel和M">
@@ -274,6 +275,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/源码阅读/" itemprop="url" rel="index">
+                    <span itemprop="name">源码阅读</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -340,6 +363,16 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MVVM/" rel="tag"># MVVM</a>
+          
+            <a href="/tags/ReactiveCocoa/" rel="tag"># ReactiveCocoa</a>
+          
+            <a href="/tags/函数式编程/" rel="tag"># 函数式编程</a>
+          
+        </div>
       
 
       
@@ -446,7 +479,25 @@
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
             
 
           </nav>

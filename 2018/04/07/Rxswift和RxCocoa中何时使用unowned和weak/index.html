@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="ReactiveCocoa,函数式编程,Rxswift," />
 
 
 
@@ -80,13 +80,14 @@
 
 
 <meta name="description" content="使用RxCocoa有时很难区分什么时候使用weak，什么时候使用unowned。当一个闭包执行时其中的self引用的对象有可能已经被释放掉时，我们会使用weak，所以将self声明为可选类型。当我们知道某个闭包执行时我们确定self引用的对象不会被释放掉，我们使用unowned，否则将会导致崩溃在RxSwift中，特别是在RxCocoa中，选择关键字需遵从下列原则：  noting：在单例或者绝对">
+<meta name="keywords" content="ReactiveCocoa,函数式编程,Rxswift">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Rxswift和RxCocoa中何时使用unowned和weak">
 <meta property="og:url" content="http://yoursite.com/2018/04/07/Rxswift和RxCocoa中何时使用unowned和weak/index.html">
 <meta property="og:site_name" content="吴昌文">
 <meta property="og:description" content="使用RxCocoa有时很难区分什么时候使用weak，什么时候使用unowned。当一个闭包执行时其中的self引用的对象有可能已经被释放掉时，我们会使用weak，所以将self声明为可选类型。当我们知道某个闭包执行时我们确定self引用的对象不会被释放掉，我们使用unowned，否则将会导致崩溃在RxSwift中，特别是在RxCocoa中，选择关键字需遵从下列原则：  noting：在单例或者绝对">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-17T07:03:52.309Z">
+<meta property="og:updated_time" content="2019-01-17T09:41:35.150Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Rxswift和RxCocoa中何时使用unowned和weak">
 <meta name="twitter:description" content="使用RxCocoa有时很难区分什么时候使用weak，什么时候使用unowned。当一个闭包执行时其中的self引用的对象有可能已经被释放掉时，我们会使用weak，所以将self声明为可选类型。当我们知道某个闭包执行时我们确定self引用的对象不会被释放掉，我们使用unowned，否则将会导致崩溃在RxSwift中，特别是在RxCocoa中，选择关键字需遵从下列原则：  noting：在单例或者绝对">
@@ -272,6 +273,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -319,6 +342,16 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ReactiveCocoa/" rel="tag"># ReactiveCocoa</a>
+          
+            <a href="/tags/函数式编程/" rel="tag"># 函数式编程</a>
+          
+            <a href="/tags/Rxswift/" rel="tag"># Rxswift</a>
+          
+        </div>
       
 
       
@@ -416,7 +449,25 @@
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
             
 
           </nav>
