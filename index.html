@@ -253,6 +253,176 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/18/如何为View（包含子View）同时添加圆角和阴影效果/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jarvis Wu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="吴昌文">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/18/如何为View（包含子View）同时添加圆角和阴影效果/" itemprop="url">如何为View（包含子View）同时添加圆角和阴影效果</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-18T17:57:24+08:00">
+                2019-01-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>想要为UIView添加一个圆角需要设置layer层的masksToBounds为YES（不设置的话子视图超出圆角的部分会显示出来），如果同时我们为按钮添加阴影效果的话，此时阴影效果由于masksToBounds的值为YES也无法显示出来。</p>
+<p>我们可以考虑将UIView的子视图也设置为圆角，将父视图的masksToBounds设置为NO，子视图的masksToBounds设置为YES。</p>
+<p>比如我们想为如下的View（包含一个titleView和一个contentView）添加圆角和阴影<br><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fzawjmkyyej306s07lmxb.jpg" alt=""></p>
+<ol>
+<li>为父视图添加圆角和阴影效果，masksToBounds设置为NO</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">self.layer.cornerRadius = 8.0;</span><br><span class="line">self.layer.shadowRadius = 8.0;</span><br><span class="line">self.layer.shadowColor = [UIColor grayColor].CGColor;</span><br><span class="line">self.layer.shadowOffset = CGSizeMake(0, 7);</span><br><span class="line">self.layer.shadowOpacity = 0.15;</span><br><span class="line">self.layer.masksToBounds = NO;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>为上半部分View添加左上和右上的圆角，masksToBounds设置为YES</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">CGRect topCornerRect =</span><br><span class="line">    CGRectMake(self.titleView.bounds.origin.x, self.titleView.bounds.origin.x, self.bounds.size.width, 24);</span><br><span class="line">UIBezierPath *titleViewMaskPath = [UIBezierPath bezierPathWithRoundedRect:topCornerRect</span><br><span class="line">                                                        byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight</span><br><span class="line">                                                              cornerRadii:CGSizeMake(8, 8)];</span><br><span class="line">//创建 layer</span><br><span class="line">CAShapeLayer *titleViewMaskLayer = [[CAShapeLayer alloc] init];</span><br><span class="line">titleViewMaskLayer.frame = topCornerRect;</span><br><span class="line">//赋值</span><br><span class="line">titleViewMaskLayer.path = titleViewMaskPath.CGPath;</span><br><span class="line">self.titleView.layer.mask = titleViewMaskLayer;</span><br><span class="line">self.titleView.layer.masksToBounds = YES;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>为下半部分View添加左上和右上的圆角，masksToBounds设置为YES</li>
+</ol>
+<pre><code>CGRect bottomCornerRect = CGRectMake(self.blockSuperView.bounds.origin.x, self.blockSuperView.bounds.origin.x,
+                                     self.bounds.size.width, self.bounds.size.height - 24);
+UIBezierPath *blockSuperViewMaskPath =
+    [UIBezierPath bezierPathWithRoundedRect:bottomCornerRect
+                          byRoundingCorners:UIRectCornerBottomLeft | UIRectCornerBottomRight
+                                cornerRadii:CGSizeMake(8, 8)];
+//创建 layer
+CAShapeLayer *blockSuperViewMaskLayer = [[CAShapeLayer alloc] init];
+blockSuperViewMaskLayer.frame = bottomCornerRect;
+//赋值
+blockSuperViewMaskLayer.path = blockSuperViewMaskPath.CGPath;
+self.blockSuperView.layer.mask = blockSuperViewMaskLayer;
+self.blockSuperView.layer.masksToBounds = YES;
+</code></pre><p>最终显示效果：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fzdygc087bj30u01hcdkm.jpg" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/25/更换Launch-Screen的图片后不生效的解决办法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1523,167 +1693,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/07/iOS状态栏操作小结/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jarvis Wu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="吴昌文">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/07/iOS状态栏操作小结/" itemprop="url">iOS状态栏操作小结</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-07T18:22:29+08:00">
-                2018-05-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>找遍了网上一些设置状态栏的方法，没有比较全面的，所以自己总结了一个<br>设置样式和设置隐藏的方法基本一致，自行类比</p>
-<p>##iOS6及之前版本<br>在<code>Info.plist</code>表单中设置 <code>View controller-based status bar appearance</code>字段为 NO（禁用系统自带的状态栏）<br>在代码中通过<code>- (void)setStatusBarHidden:(BOOL)hidden animated:(BOOL)animated</code>进行控制<br><strong>这种方法对状态栏的修改是全局的，对所有视图控制器都会生效</strong></p>
-<hr>
-<p>##iOS7及之后版本</p>
-<ol>
-<li>iOS6的方法被不被苹果推荐使用，会报警告</li>
-<li>在你需要隐藏状态栏的视图控制器类中添加这个方法<br><code>- (BOOL)prefersStatusBarHidden{
-return YES;
-}</code><br>设置YES就隐藏状态栏，设置NO显示状态栏<br>系统会自动调用这个函数<br>如果需要更改StatusBar的状态的话，可以使用在类中添加一个属性<code>isStatusBarHidden</code>，在init中初始化为你想要的值，添加这个方法<br><code>- (BOOL)prefersStatusBarHidden{
-return self.isStatusBarHidden;
-}</code><br>在需要显示状态栏的时候调用<br><code>self.isStatusBarHidden = NO;
-[self setNeedsStatusBarAppearanceUpdate];</code><br>在需要隐藏状态栏的时候调用<br><code>self.isStatusBarHidden = YES;
-[self setNeedsStatusBarAppearanceUpdate];</code><br>setNeedsStatusBarAppearanceUpdate这个方法的作用是更新状态栏，在每次修改状态栏设置或者样式之后调用</li>
-</ol>
-<p>注意：此方法对NavigationController无效，要使其生效可创建一个NavigationController的类别,增加这个方法<br><code>- (UIStatusBarStyle)preferredStatusBarStyle {
-    return [[self topViewController] preferredStatusBarStyle];
-}</code></p>
-<blockquote>
-<p>这个函数的返回值默认返回nil，此时系统就会调用当前viewControllerA的preferredStatusBarStyle函数；如果返回值是另一个viewControllerB那么系统就会调用viewControllerB的preferredStatusBarStyle函数</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1734,7 +1743,7 @@ return self.isStatusBarHidden;
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
