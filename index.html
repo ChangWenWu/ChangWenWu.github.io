@@ -253,6 +253,153 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/23/安装Flutter时Gradle运行失败/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jarvis Wu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="吴昌文">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/23/安装Flutter时Gradle运行失败/" itemprop="url">安装Flutter时Gradle运行失败</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-23T09:55:36+08:00">
+                2019-01-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Flutter/" itemprop="url" rel="index">
+                    <span itemprop="name">Flutter</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>执行<code>flutter run</code>命令打包android项目时遇到了这个错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">Jarvis-2:flutter_gallery jarvis$ flutter run</span><br><span class="line">Launching lib/main.dart on SM G9600 in debug mode...</span><br><span class="line">Initializing gradle...                                       1.1s</span><br><span class="line">Resolving dependencies...                                        </span><br><span class="line">* Error running Gradle:</span><br><span class="line">ProcessException: Process &quot;/Users/admin/Documents/flutter/examples/flutter_gallery/android/gradlew&quot; exited abnormally:</span><br><span class="line"></span><br><span class="line">&gt; Configure project :app</span><br><span class="line">Checking the license for package Android SDK Platform 27 in /Users/admin/Library/Android/sdk/licenses</span><br><span class="line">Warning: License for package Android SDK Platform 27 not accepted.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">FAILURE: Build failed with an exception.</span><br><span class="line"></span><br><span class="line">* Where:</span><br><span class="line">Build file &apos;/Users/admin/Documents/flutter/examples/flutter_gallery/android/build.gradle&apos; line: 24</span><br><span class="line"></span><br><span class="line">* What went wrong:</span><br><span class="line">A problem occurred evaluating root project &apos;android&apos;.</span><br><span class="line">&gt; A problem occurred configuring project &apos;:app&apos;.</span><br><span class="line">   &gt; Failed to install the following Android SDK packages as some licences have not been accepted.</span><br><span class="line">        platforms;android-27 Android SDK Platform 27</span><br><span class="line">     To build this project, accept the SDK license agreements and install the missing components using the Android Studio SDK Manager.</span><br><span class="line">     Alternatively, to transfer the license agreements from one workstation to another, see http://d.android.com/r/studio-ui/export-licenses.html</span><br><span class="line"></span><br><span class="line">     Using Android SDK: /Users/admin/Library/Android/sdk</span><br><span class="line"></span><br><span class="line">* Try:</span><br><span class="line">Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.</span><br><span class="line"></span><br><span class="line">* Get more help at https://help.gradle.org</span><br><span class="line"></span><br><span class="line">BUILD FAILED in 1s</span><br><span class="line">  Command: /Users/admin/Documents/flutter/examples/flutter_gallery/android/gradlew app:properties</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Please review your Gradle project setup in the android/ folder.</span><br><span class="line">Jarvis-2:flutter_gallery jarvis$ flutter doctor -v</span><br><span class="line">[✓] Flutter (Channel stable, v1.0.0, on Mac OS X 10.14 18A391, locale zh-Hans-CN)</span><br><span class="line">    • Flutter version 1.0.0 at /Users/admin/Documents/flutter</span><br><span class="line">    • Framework revision 5391447fae (8 weeks ago), 2018-11-29 19:41:26 -0800</span><br><span class="line">    • Engine revision 7375a0f414</span><br><span class="line">    • Dart version 2.1.0 (build 2.1.0-dev.9.4 f9ebf21297)</span><br><span class="line"></span><br><span class="line">[✓] Android toolchain - develop for Android devices (Android SDK 28.0.3)</span><br><span class="line">    • Android SDK at /Users/admin/Library/Android/sdk</span><br><span class="line">    • Android NDK location not configured (optional; useful for native profiling support)</span><br><span class="line">    • Platform android-28, build-tools 28.0.3</span><br><span class="line">    • Java binary at: /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin/java</span><br><span class="line">    • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1136-b06)</span><br><span class="line">    • All Android licenses accepted.</span><br><span class="line"></span><br><span class="line">[✓] iOS toolchain - develop for iOS devices (Xcode 10.0)</span><br><span class="line">    • Xcode at /Applications/Xcode.app/Contents/Developer</span><br><span class="line">    • Xcode 10.0, Build version 10A255</span><br><span class="line">    • ios-deploy 1.9.4</span><br><span class="line">    • CocoaPods version 1.5.3</span><br><span class="line"></span><br><span class="line">[✓] Android Studio (version 3.2)</span><br><span class="line">    • Android Studio at /Applications/Android Studio.app/Contents</span><br><span class="line">    • Flutter plugin version 31.3.1</span><br><span class="line">    • Dart plugin version 181.5656</span><br><span class="line">    • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1136-b06)</span><br><span class="line"></span><br><span class="line">[!] VS Code (version 1.30.2)</span><br><span class="line">    • VS Code at /Applications/Visual Studio Code.app/Contents</span><br><span class="line">    • Flutter extension not installed; install from</span><br><span class="line">      https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter</span><br><span class="line"></span><br><span class="line">[✓] Connected device (2 available)</span><br><span class="line">    • SM G9600 • 3949363555493098                         • android-arm64 • Android 8.0.0 (API 26)</span><br><span class="line">    • iPhone   • 756df34d9fd2baa79c128611bba8bf55a36d4360 • ios           • iOS 9.3.2</span><br><span class="line"></span><br><span class="line">! Doctor found issues in 1 category.</span><br></pre></td></tr></table></figure>
+<p>使用<code>flutter doctor</code>检测环境都是正常的</p>
+<p>后来上flutter项目里提了个<a href="https://github.com/flutter/flutter/issues/26874" target="_blank" rel="noopener">issue</a>，发现是android SDK版本不对导致的，我调试的安卓设备是8.0版本，而新安装的Android Studio的SDK默认只有9.0版本</p>
+<p>解决方案：<br>在Android Studio的设置里安装设备对应版本的SDK即可</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fzgafzom77j30sk0juwjj.jpg" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/21/Mac OS下搭建Flutter开发环境/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1586,148 +1733,6 @@ self.blockSuperView.layer.masksToBounds = YES;
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/03/Raywenderlich-的-Swift-代码规范/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jarvis Wu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="吴昌文">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/03/Raywenderlich-的-Swift-代码规范/" itemprop="url">Raywenderlich 的 Swift 代码规范</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-03T18:22:29+08:00">
-                2018-07-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="https://github.com/raywenderlich/swift-style-guide" target="_blank" rel="noopener">Raywenderlich 的 Swift 代码规范</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1778,7 +1783,7 @@ self.blockSuperView.layer.masksToBounds = YES;
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1800,7 +1805,7 @@ self.blockSuperView.layer.masksToBounds = YES;
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
