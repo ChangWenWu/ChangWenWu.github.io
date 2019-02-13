@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="吴昌文">
 <meta property="og:description" content="由于准备入坑Flutter，所以Dart语言也是必学的。花了两天时间过了一遍官方入门文档，对于如果拥有其他面向对象语言基础，并且英文比较好的同学，上手Dart是非常快的（Swift，Dart，Kotlin三胞胎🤣）。本文总结了Dart的一些语法特点便于以后翻阅，比较基础的就跳过啦。 基本概念 所有的变量均为对象，所有的对象都是一个类的实例，包括数字，方法和空值（null）。所有的对象继承自Obj">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-11T10:21:23.010Z">
+<meta property="og:updated_time" content="2019-02-12T07:29:24.609Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dart语法概述">
 <meta name="twitter:description" content="由于准备入坑Flutter，所以Dart语言也是必学的。花了两天时间过了一遍官方入门文档，对于如果拥有其他面向对象语言基础，并且英文比较好的同学，上手Dart是非常快的（Swift，Dart，Kotlin三胞胎🤣）。本文总结了Dart的一些语法特点便于以后翻阅，比较基础的就跳过啦。 基本概念 所有的变量均为对象，所有的对象都是一个类的实例，包括数字，方法和空值（null）。所有的对象继承自Obj">
@@ -370,6 +370,71 @@
 <p>数字转字符串：</p>
 <p><code>String oneAsString = 1.toString();</code></p>
 <p>(数字字面量直接用点语法，这糖真甜😁)</p>
+<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><ul>
+<li>Dart字符串为UTF-16字符序列，可使用””或者’’创建</li>
+<li>使用<code>${expression}</code>将表达式放入一个字符串中</li>
+<li>使用<code>==</code>判断两个字符串是否等同，若两个字符串的字符序列相同，则两者等同</li>
+<li>使用<code>+</code>合并字符串</li>
+<li><p>使用<code>r</code>创建一个字符串生值</p>
+<p>  <code>var s = r&#39;In a raw string, not even \n gets special treatment.&#39;;</code></p>
+</li>
+</ul>
+<h4 id="布尔值"><a href="#布尔值" class="headerlink" title="布尔值"></a>布尔值</h4><ul>
+<li>if和assert只可接收布尔值</li>
+</ul>
+<h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><ul>
+<li>使用Lists表示，可自动推断元素类型</li>
+<li><p>在数组前加const表示一个不可变数组，为编译器常量</p>
+<p>  <code>var constantList = const [1, 2, 3];</code></p>
+</li>
+</ul>
+<h4 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h4><ul>
+<li>使用Maps表示，可自动推断元素类型</li>
+<li><p>加const代表不可变字典</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">final constantMap = const &#123;</span><br><span class="line">  2: &apos;helium&apos;,</span><br><span class="line">  10: &apos;neon&apos;,</span><br><span class="line">  18: &apos;argon&apos;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="字符"><a href="#字符" class="headerlink" title="字符"></a>字符</h4><ul>
+<li>Dart字符由UFT-32字符集构成，由于字符（UFT-32）与字符串（UTF-16）为不用字符集，相互转化时需要特殊语法</li>
+<li>表示一个Unicode字符：<code>\uXXXX</code>,超过4位：<code>\u{1f600}</code></li>
+</ul>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><ul>
+<li>Dart中的方法是一个<code>Funciton</code>对象</li>
+<li><p>Dart返回简写语法：</p>
+<p>  <code>bool isNoble(int atomicNumber) =&gt; _nobleGases[atomicNumber] != null;</code></p>
+</li>
+<li><p>参数默认值</p>
+<p>  <code>void enableFlags({bool bold = false, bool hidden = false}) {...}</code></p>
+</li>
+<li>函数可作为参数传入另一个函数</li>
+<li><p>匿名函数</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var list = [&apos;apples&apos;, &apos;bananas&apos;, &apos;oranges&apos;];</span><br><span class="line">list.forEach((item) &#123;</span><br><span class="line">  print(&apos;$&#123;list.indexOf(item)&#125;: $item&apos;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h4><ul>
+<li><p>使用<code>as</code>做强制类型转换, 可能会抛出异常</p>
+<p>  <code>(emp as Person).firstName = &#39;Bob&#39;;</code></p>
+</li>
+<li><p>使用<code>is</code>判断对象类型</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if (emp is Person) &#123;</span><br><span class="line">  // Type check</span><br><span class="line">  emp.firstName = &apos;Bob&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>expr1 ?? expr2</code>：若expr1非空，返回该值，否则返回expr2</p>
+</li>
+</ul>
+<h4 id="级联调用"><a href="#级联调用" class="headerlink" title="级联调用"></a>级联调用</h4><ul>
+<li><p>使用<code>..</code>对同一个对象连续做一系列操作，包括函数调用，无需声明临时变量</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">querySelector(&apos;#confirm&apos;) // Get an object.</span><br><span class="line">  ..text = &apos;Confirm&apos; // Use its members.</span><br><span class="line">  ..classes.add(&apos;important&apos;)</span><br><span class="line">  ..onClick.listen((e) =&gt; window.alert(&apos;Confirmed!&apos;));</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h4><ul>
+<li>未捕获的异常会造成程序终止</li>
+<li><p>Dart提供<code>Exception</code>和<code>Error</code>两种类型的异常，也可以抛出一个非空对象作为异常</p>
+<p>  <code>throw &#39;Out of llamas!&#39;;</code></p>
+</li>
+<li><p>使用on捕获特定类型的异常，使用catch捕获未被指定的异常</p>
+  <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  breedMoreLlamas();</span><br><span class="line">&#125; on OutOfLlamasException &#123;</span><br><span class="line">  <span class="comment">// A specific exception</span></span><br><span class="line">  buyMoreLlamas();</span><br><span class="line">&#125; on Exception <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">  <span class="comment">// Anything else that is an exception</span></span><br><span class="line">  <span class="built_in">print</span>(<span class="string">'Unknown exception: $e'</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">  <span class="comment">// No specified type, handles all</span></span><br><span class="line">  <span class="built_in">print</span>(<span class="string">'Something really unknown: $e'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
     </div>
@@ -562,7 +627,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">2.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内建类型"><span class="nav-number">3.</span> <span class="nav-text">内建类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数字"><span class="nav-number">3.1.</span> <span class="nav-text">数字</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">2.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内建类型"><span class="nav-number">3.</span> <span class="nav-text">内建类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数字"><span class="nav-number">3.1.</span> <span class="nav-text">数字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串"><span class="nav-number">3.2.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#布尔值"><span class="nav-number">3.3.</span> <span class="nav-text">布尔值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组"><span class="nav-number">3.4.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字典"><span class="nav-number">3.5.</span> <span class="nav-text">字典</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符"><span class="nav-number">3.6.</span> <span class="nav-text">字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法"><span class="nav-number">3.7.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#操作符"><span class="nav-number">3.8.</span> <span class="nav-text">操作符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#级联调用"><span class="nav-number">3.9.</span> <span class="nav-text">级联调用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#异常"><span class="nav-number">3.10.</span> <span class="nav-text">异常</span></a></li></ol></li></ol></div>
             
 
           </div>
