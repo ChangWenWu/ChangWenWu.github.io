@@ -347,17 +347,17 @@
         
           
             <p>由于准备入坑Flutter，所以Dart语言也是必学的。花了两天时间过了一遍<a href="https://www.dartlang.org/guides/language/language-tour" target="_blank" rel="noopener">官方入门文档</a>，对于如果拥有其他面向对象语言基础，并且英文比较好的同学，上手Dart是非常快的（Swift，Dart，Kotlin三胞胎🤣）。本文总结了Dart的一些语法特点便于以后翻阅，比较基础的就跳过啦。</p>
-<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ul>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
 <li>所有的变量均为对象，所有的对象都是一个类的实例，包括数字，方法和空值（null）。所有的对象继承自Object类。</li>
 <li>Dart是强类型语言，并且可以推断变量类型即使没有声明。</li>
 <li>Dart无继承关键字（public, protected, and private），使用_开头的成员变量默认为私有属性。</li>
 </ul>
-<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ul>
 <li>未初始化的变量默认为null，即使是数字这种基本类型也为null，因为在Dart中所有变量均为对象类型。</li>
 <li>一个final修饰的变量无法再次被赋值。</li>
 <li>一个const修饰的值在编译期间就已经确定，无法被改变。</li>
 </ul>
-<h3 id="内建类型"><a href="#内建类型" class="headerlink" title="内建类型"></a>内建类型</h3><p>Dart对于以下数据类型有特殊处理：</p>
+<h2 id="内建类型"><a href="#内建类型" class="headerlink" title="内建类型"></a>内建类型</h2><p>Dart对于以下数据类型有特殊处理：</p>
 <ul>
 <li>numbers</li>
 <li>strings</li>
@@ -368,13 +368,13 @@
 <li>symbols</li>
 </ul>
 <p>可使用字面量语法初始化这些类型的对象</p>
-<h4 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h4><p>Dart中的数字有两种类型：int和double</p>
+<h3 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h3><p>Dart中的数字有两种类型：int和double</p>
 <p>字符串转数字：</p>
 <p><code>var one = int.parse(&#39;1&#39;);</code></p>
 <p>数字转字符串：</p>
 <p><code>String oneAsString = 1.toString();</code></p>
 <p>(数字字面量直接用点语法，这糖真甜😁)</p>
-<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><ul>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><ul>
 <li>Dart字符串为UTF-16字符序列，可使用””或者’’创建</li>
 <li>使用<code>${expression}</code>将表达式放入一个字符串中</li>
 <li>使用<code>==</code>判断两个字符串是否等同，若两个字符串的字符序列相同，则两者等同</li>
@@ -383,26 +383,26 @@
 <p>  <code>var s = r&#39;In a raw string, not even \n gets special treatment.&#39;;</code></p>
 </li>
 </ul>
-<h4 id="布尔值"><a href="#布尔值" class="headerlink" title="布尔值"></a>布尔值</h4><ul>
+<h3 id="布尔值"><a href="#布尔值" class="headerlink" title="布尔值"></a>布尔值</h3><ul>
 <li>if和assert只可接收布尔值</li>
 </ul>
-<h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><ul>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><ul>
 <li>使用Lists表示，可自动推断元素类型</li>
 <li><p>在数组前加const表示一个不可变数组，为编译器常量</p>
 <p>  <code>var constantList = const [1, 2, 3];</code></p>
 </li>
 </ul>
-<h4 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h4><ul>
+<h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2><ul>
 <li>使用Maps表示，可自动推断元素类型</li>
 <li><p>加const代表不可变字典</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">final constantMap = const &#123;</span><br><span class="line">  2: &apos;helium&apos;,</span><br><span class="line">  10: &apos;neon&apos;,</span><br><span class="line">  18: &apos;argon&apos;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h4 id="字符"><a href="#字符" class="headerlink" title="字符"></a>字符</h4><ul>
+<h2 id="字符"><a href="#字符" class="headerlink" title="字符"></a>字符</h2><ul>
 <li>Dart字符由UFT-32字符集构成，由于字符（UFT-32）与字符串（UTF-16）为不用字符集，相互转化时需要特殊语法</li>
 <li>表示一个Unicode字符：<code>\uXXXX</code>,超过4位：<code>\u{1f600}</code></li>
 </ul>
-<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><ul>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
 <li>Dart中的方法是一个<code>Funciton</code>对象</li>
 <li><p>Dart返回简写语法：</p>
 <p>  <code>bool isNoble(int atomicNumber) =&gt; _nobleGases[atomicNumber] != null;</code></p>
@@ -415,7 +415,7 @@
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var list = [&apos;apples&apos;, &apos;bananas&apos;, &apos;oranges&apos;];</span><br><span class="line">list.forEach((item) &#123;</span><br><span class="line">  print(&apos;$&#123;list.indexOf(item)&#125;: $item&apos;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h4 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h4><ul>
+<h2 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h2><ul>
 <li><p>使用<code>as</code>做强制类型转换, 可能会抛出异常</p>
 <p>  <code>(emp as Person).firstName = &#39;Bob&#39;;</code></p>
 </li>
@@ -425,12 +425,12 @@
 <li><p><code>expr1 ?? expr2</code>：若expr1非空，返回该值，否则返回expr2</p>
 </li>
 </ul>
-<h4 id="级联调用"><a href="#级联调用" class="headerlink" title="级联调用"></a>级联调用</h4><ul>
+<h2 id="级联调用"><a href="#级联调用" class="headerlink" title="级联调用"></a>级联调用</h2><ul>
 <li><p>使用<code>..</code>对同一个对象连续做一系列操作，包括函数调用，无需声明临时变量</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">querySelector(&apos;#confirm&apos;) // Get an object.</span><br><span class="line">  ..text = &apos;Confirm&apos; // Use its members.</span><br><span class="line">  ..classes.add(&apos;important&apos;)</span><br><span class="line">  ..onClick.listen((e) =&gt; window.alert(&apos;Confirmed!&apos;));</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h4 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h4><ul>
+<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><ul>
 <li>未捕获的异常会造成程序终止</li>
 <li><p>Dart提供<code>Exception</code>和<code>Error</code>两种类型的异常，也可以抛出一个非空对象作为异常</p>
 <p>  <code>throw &#39;Out of llamas!&#39;;</code></p>
@@ -438,6 +438,60 @@
 <li><p>使用on捕获特定类型的异常，使用catch捕获未被指定的异常</p>
   <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  breedMoreLlamas();</span><br><span class="line">&#125; on OutOfLlamasException &#123;</span><br><span class="line">  <span class="comment">// A specific exception</span></span><br><span class="line">  buyMoreLlamas();</span><br><span class="line">&#125; on Exception <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">  <span class="comment">// Anything else that is an exception</span></span><br><span class="line">  <span class="built_in">print</span>(<span class="string">'Unknown exception: $e'</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">  <span class="comment">// No specified type, handles all</span></span><br><span class="line">  <span class="built_in">print</span>(<span class="string">'Something really unknown: $e'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
+<li><p>重复传播异常时使用<code>rethrow</code>关键字</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">void misbehave() &#123;</span><br><span class="line">  try &#123;</span><br><span class="line">    dynamic foo = true;</span><br><span class="line">    print(foo++); // Runtime error</span><br><span class="line">  &#125; catch (e) &#123;</span><br><span class="line">    print(&apos;misbehave() partially handled $&#123;e.runtimeType&#125;.&apos;);</span><br><span class="line">    rethrow; // Allow callers to see the exception.</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用<code>Finally</code>可以保证即使有异常产生也保证代码继续运行</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">try &#123;</span><br><span class="line">  breedMoreLlamas();</span><br><span class="line">&#125; finally &#123;</span><br><span class="line">  // Always clean up, even if an exception is thrown.</span><br><span class="line">  cleanLlamaStalls();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><ul>
+<li><p>使用<code>?.</code>可以避免调用者为空值时产生异常</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// If p is non-null, set its y value to 4.</span><br><span class="line">p?.y = 4;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><ul>
+<li><p>构造函数的语法糖：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Point &#123;</span><br><span class="line">  num x, y;</span><br><span class="line"></span><br><span class="line">  // Syntactic sugar for setting x and y</span><br><span class="line">  // before the constructor body runs.</span><br><span class="line">  Point(this.x, this.y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果未声明构造函数，那么会隐式的生成一个无初始化参数的构造函数</p>
+</li>
+<li>构造函数不会被继承</li>
+<li><p>命名构造函数，同样不会被继承</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Point &#123;</span><br><span class="line">  num x, y;</span><br><span class="line"></span><br><span class="line">  Point(this.x, this.y);</span><br><span class="line"></span><br><span class="line">  // Named constructor</span><br><span class="line">  Point.origin() &#123;</span><br><span class="line">    x = 0;</span><br><span class="line">    y = 0;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>子类的构造函数默认会在首部调用父类的默认构造函数</p>
+</li>
+<li><p>若需要触发父类的非默认构造函数，则可在函数名后使用<code>:</code></p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Person &#123;</span><br><span class="line">  String firstName;</span><br><span class="line"></span><br><span class="line">  Person.fromJson(Map data) &#123;</span><br><span class="line">    print(&apos;in Person&apos;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Employee extends Person &#123;</span><br><span class="line">  // Person does not have a default constructor;</span><br><span class="line">  // you must call super.fromJson(data).</span><br><span class="line">  Employee.fromJson(Map data) : super.fromJson(data) &#123;</span><br><span class="line">    print(&apos;in Employee&apos;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>子类也可直接使用父类的构造函数</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class Employee extends Person &#123;</span><br><span class="line">  Employee() : super.fromJson(getDefaultData());</span><br><span class="line">  // ···</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>语法糖：可以在构造函数体调用之前出事偶会实例变量的值</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// Initializer list sets instance variables before</span><br><span class="line">// the constructor body runs.</span><br><span class="line">Point.fromJson(Map&lt;String, num&gt; json)</span><br><span class="line">    : x = json[&apos;x&apos;],</span><br><span class="line">      y = json[&apos;y&apos;] &#123;</span><br><span class="line">  print(&apos;In Point.fromJson(): ($x, $y)&apos;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>语法糖：构造函数体调用前可使用断言验证参数合法性</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Point.withAssert(this.x, this.y) : assert(x &gt;= 0) &#123;</span><br><span class="line">  print(&apos;In Point.withAssert(): ($x, $y)&apos;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重定向构造函数（使用已有的构造函数生成另一个构造函数）</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Point &#123;</span><br><span class="line">  num x, y;</span><br><span class="line"></span><br><span class="line">  // The main constructor for this class.</span><br><span class="line">  Point(this.x, this.y);</span><br><span class="line"></span><br><span class="line">  // Delegates to the main constructor.</span><br><span class="line">  Point.alongXAxis(num x) : this(x, 0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>若对象不会被改变，可使用常量构造函数，需保证所有的实例变量均为编译期常量</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class ImmutablePoint &#123;</span><br><span class="line">  static final ImmutablePoint origin =</span><br><span class="line">      const ImmutablePoint(0, 0);</span><br><span class="line"></span><br><span class="line">  final num x, y;</span><br><span class="line"></span><br><span class="line">  const ImmutablePoint(this.x, this.y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>工厂模式构造函数，如果调用构造函数时不一定需要生成一个实例时，可使用关键字<code>factory</code></p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">class Logger &#123;</span><br><span class="line">  final String name;</span><br><span class="line">  bool mute = false;</span><br><span class="line"></span><br><span class="line">  // _cache is library-private, thanks to</span><br><span class="line">  // the _ in front of its name.</span><br><span class="line">  static final Map&lt;String, Logger&gt; _cache =</span><br><span class="line">      &lt;String, Logger&gt;&#123;&#125;;</span><br><span class="line"></span><br><span class="line">  factory Logger(String name) &#123;</span><br><span class="line">    if (_cache.containsKey(name)) &#123;</span><br><span class="line">      return _cache[name];</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      final logger = Logger._internal(name);</span><br><span class="line">      _cache[name] = logger;</span><br><span class="line">      return logger;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Logger._internal(this.name);</span><br><span class="line"></span><br><span class="line">  void log(String msg) &#123;</span><br><span class="line">    if (!mute) print(msg);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h3><ul>
+<li>Dart会为对象的属性隐式生成getter和setter方法</li>
+<li>抽象方法只可存在于抽象类中</li>
+<li>抽象类不可被实例化，一般用于定义接口</li>
+<li><p>声明抽象方法只需用<code>;</code>代替方法体</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">abstract class Doer &#123;</span><br><span class="line">  // Define instance variables and methods...</span><br><span class="line"></span><br><span class="line">  void doSomething(); // Define an abstract method.</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
 </ul>
 
           
