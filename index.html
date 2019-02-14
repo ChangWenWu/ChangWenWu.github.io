@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/11/Dart语法概述/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/11/Dart官方文档阅读笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jarvis Wu">
@@ -272,7 +272,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/02/11/Dart语法概述/" itemprop="url">Dart语法概述</a></h1>
+                <a class="post-title-link" href="/2019/02/11/Dart官方文档阅读笔记/" itemprop="url">Dart官方文档阅读笔记</a></h1>
         
 
         <div class="post-meta">
@@ -491,7 +491,93 @@
 <li><p>声明抽象方法只需用<code>;</code>代替方法体</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">abstract class Doer &#123;</span><br><span class="line">  // Define instance variables and methods...</span><br><span class="line"></span><br><span class="line">  void doSomething(); // Define an abstract method.</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li></li>
+<li><p>类可以继承多个接口</p>
+</li>
+<li><p>使用<code>@override</code>重写成员函数</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class SmartTelevision extends Television &#123;</span><br><span class="line">  @override</span><br><span class="line">  void turnOn() &#123;...&#125;</span><br><span class="line">  // ···</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>支持操作符重写</p>
+</li>
+<li>重写<code>==</code>操作符时同时需要重写<code>hashcode</code>方法（getter）</li>
+<li>重写<code>nosuchMethod</code>方法后，当调用一个不存在的方法时会被触发</li>
+</ul>
+<p>##枚举</p>
+<ul>
+<li><p>使用<code>values</code>获取枚举所有值的数组</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Color&gt; colors = Color.values;</span><br><span class="line">assert(colors[2] == Color.blue);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用switch语句时，如果没有处理所有的枚举值则会收到警告</p>
+</li>
+<li>枚举类型有如下限制：<ol>
+<li>不可继承，混入</li>
+<li>不可实例化</li>
+</ol>
+</li>
+</ul>
+<p>##混入</p>
+<ul>
+<li>混入可在多个类的体系中复用一个类的代码</li>
+<li><p>使用关键词<code>with</code>，支持混入多个类</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Musician extends Performer with Musical &#123;</span><br><span class="line">  // ···</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Maestro extends Person</span><br><span class="line">    with Musical, Aggressive, Demented &#123;</span><br><span class="line">  Maestro(String maestroName) &#123;</span><br><span class="line">    name = maestroName;</span><br><span class="line">    canConduct = true;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用<code>on</code>指代一个混入类的特定类型</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mixin MusicalPerformer on Musician &#123;</span><br><span class="line">  // ···</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>##类变量和类方法</p>
+<ul>
+<li>使用<code>static</code>指代类变量和类方法</li>
+<li>类变量不可访问<code>this</code></li>
+<li>类变量是编译期常量，可作为函数参数传入</li>
+</ul>
+<p>##泛型</p>
+<ul>
+<li><p>泛型类型是具体化的，运行时携带了完整的类型信息，可使用<code>is</code>判断其具体类型</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var names = List&lt;String&gt;();</span><br><span class="line">names.addAll([&apos;Seth&apos;, &apos;Kathy&apos;, &apos;Lars&apos;]);</span><br><span class="line">print(names is List&lt;String&gt;); // true</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用<code>extends</code>约束泛型类型</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class Foo&lt;T extends SomeBaseClass&gt; &#123;</span><br><span class="line">  // Implementation goes here...</span><br><span class="line">  String toString() =&gt; &quot;Instance of &apos;Foo&lt;$T&gt;&apos;&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Extender extends SomeBaseClass &#123;...&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>泛型函数：</p>
+<ol>
+<li>返回值可为泛型 (T)</li>
+<li>参数可为泛型 (List<t>)</t></li>
+<li><p>临时变量为泛型 (T tmp)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">T first&lt;T&gt;(List&lt;T&gt; ts) &#123;</span><br><span class="line">  // Do some initial work or error checking, then...</span><br><span class="line">  T tmp = ts[0];</span><br><span class="line">  // Do some additional checking or processing...</span><br><span class="line">  return tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+<p>##库</p>
+<ul>
+<li><p>使用<code>package:</code>做唯一标识</p>
+<p>  <code>import &#39;package:test/test.dart&#39;;</code></p>
+</li>
+<li><p>库名标识冲突时使用<code>as</code></p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import &apos;package:lib1/lib1.dart&apos;;</span><br><span class="line">import &apos;package:lib2/lib2.dart&apos; as lib2;</span><br><span class="line"></span><br><span class="line">// Uses Element from lib1.</span><br><span class="line">Element element1 = Element();</span><br><span class="line"></span><br><span class="line">// Uses Element from lib2.</span><br><span class="line">lib2.Element element2 = lib2.Element();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>引入库的某一部分</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// Import only foo.</span><br><span class="line">import &apos;package:lib1/lib1.dart&apos; show foo;</span><br><span class="line"></span><br><span class="line">// Import all names EXCEPT foo.</span><br><span class="line">import &apos;package:lib2/lib2.dart&apos; hide foo;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用<code>deferred as</code>懒加载：</p>
+<p>  <code>import &#39;package:greetings/hello.dart&#39; deferred as hello;</code></p>
+<p>  当需要加载库时，调用<code>loadLibrary()</code></p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Future greet() async &#123;</span><br><span class="line">  await hello.loadLibrary();</span><br><span class="line">  hello.printGreeting();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>await</code>可保证库加载完成再执行后续代码</li>
+<li><code>loadLibrary()</code>可调用多次，但库只会被加载一次</li>
+</ul>
+</li>
+</ul>
+<p>##多线程</p>
+<ul>
+<li>使用<code>async</code>和<code>await</code>支持异步编程</li>
+<li>要使用<code>await</code>，其方法须带有<code>async</code>关键字</li>
+<li>可以使用<code>try</code>，<code>catch</code>和<code>finally</code>来处理<code>await</code>的异常</li>
+<li><p>异步方法声明</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">checkVersion() async &#123;</span><br><span class="line">  // ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">lookUpVersion() async =&gt; /* ... */;</span><br></pre></td></tr></table></figure>
+<p>  异步方法在方法体执行之前就返回了</p>
+</li>
 </ul>
 
           
