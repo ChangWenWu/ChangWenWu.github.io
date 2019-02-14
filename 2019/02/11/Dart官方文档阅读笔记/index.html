@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="吴昌文">
 <meta property="og:description" content="由于准备入坑Flutter，所以Dart语言也是必学的。花了两天时间过了一遍官方入门文档，对于如果拥有其他面向对象语言基础，并且英文比较好的同学，上手Dart是非常快的（Swift，Dart，Kotlin三胞胎🤣）。本文总结了Dart的一些语法特点便于以后翻阅，比较基础的就跳过啦。 基本概念 所有的变量均为对象，所有的对象都是一个类的实例，包括数字，方法和空值（null）。所有的对象继承自Obj">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-14T03:06:57.527Z">
+<meta property="og:updated_time" content="2019-02-14T03:15:11.836Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dart官方文档阅读笔记">
 <meta name="twitter:description" content="由于准备入坑Flutter，所以Dart语言也是必学的。花了两天时间过了一遍官方入门文档，对于如果拥有其他面向对象语言基础，并且英文比较好的同学，上手Dart是非常快的（Swift，Dart，Kotlin三胞胎🤣）。本文总结了Dart的一些语法特点便于以后翻阅，比较基础的就跳过啦。 基本概念 所有的变量均为对象，所有的对象都是一个类的实例，包括数字，方法和空值（null）。所有的对象继承自Obj">
@@ -497,8 +497,7 @@
 <li>重写<code>==</code>操作符时同时需要重写<code>hashcode</code>方法（getter）</li>
 <li>重写<code>nosuchMethod</code>方法后，当调用一个不存在的方法时会被触发</li>
 </ul>
-<p>##枚举</p>
-<ul>
+<h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><ul>
 <li><p>使用<code>values</code>获取枚举所有值的数组</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Color&gt; colors = Color.values;</span><br><span class="line">assert(colors[2] == Color.blue);</span><br></pre></td></tr></table></figure>
 </li>
@@ -510,8 +509,7 @@
 </ol>
 </li>
 </ul>
-<p>##混入</p>
-<ul>
+<h2 id="混入"><a href="#混入" class="headerlink" title="混入"></a>混入</h2><ul>
 <li>混入可在多个类的体系中复用一个类的代码</li>
 <li><p>使用关键词<code>with</code>，支持混入多个类</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Musician extends Performer with Musical &#123;</span><br><span class="line">  // ···</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Maestro extends Person</span><br><span class="line">    with Musical, Aggressive, Demented &#123;</span><br><span class="line">  Maestro(String maestroName) &#123;</span><br><span class="line">    name = maestroName;</span><br><span class="line">    canConduct = true;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -520,14 +518,12 @@
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mixin MusicalPerformer on Musician &#123;</span><br><span class="line">  // ···</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>##类变量和类方法</p>
-<ul>
+<h2 id="类变量和类方法"><a href="#类变量和类方法" class="headerlink" title="类变量和类方法"></a>类变量和类方法</h2><ul>
 <li>使用<code>static</code>指代类变量和类方法</li>
 <li>类变量不可访问<code>this</code></li>
 <li>类变量是编译期常量，可作为函数参数传入</li>
 </ul>
-<p>##泛型</p>
-<ul>
+<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><ul>
 <li><p>泛型类型是具体化的，运行时携带了完整的类型信息，可使用<code>is</code>判断其具体类型</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var names = List&lt;String&gt;();</span><br><span class="line">names.addAll([&apos;Seth&apos;, &apos;Kathy&apos;, &apos;Lars&apos;]);</span><br><span class="line">print(names is List&lt;String&gt;); // true</span><br></pre></td></tr></table></figure>
 </li>
@@ -544,8 +540,7 @@
 </ol>
 </li>
 </ul>
-<p>##库</p>
-<ul>
+<h2 id="库"><a href="#库" class="headerlink" title="库"></a>库</h2><ul>
 <li><p>使用<code>package:</code>做唯一标识</p>
 <p>  <code>import &#39;package:test/test.dart&#39;;</code></p>
 </li>
@@ -565,8 +560,7 @@
 </ul>
 </li>
 </ul>
-<p>##多线程</p>
-<ul>
+<h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><ul>
 <li>使用<code>async</code>和<code>await</code>支持异步编程</li>
 <li>要使用<code>await</code>，其方法须带有<code>async</code>关键字</li>
 <li>可以使用<code>try</code>，<code>catch</code>和<code>finally</code>来处理<code>await</code>的异常</li>
@@ -767,7 +761,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">2.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内建类型"><span class="nav-number">3.</span> <span class="nav-text">内建类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数字"><span class="nav-number">3.1.</span> <span class="nav-text">数字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">3.2.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#布尔值"><span class="nav-number">3.3.</span> <span class="nav-text">布尔值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">4.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字典"><span class="nav-number">5.</span> <span class="nav-text">字典</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符"><span class="nav-number">6.</span> <span class="nav-text">字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">7.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作符"><span class="nav-number">8.</span> <span class="nav-text">操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#级联调用"><span class="nav-number">9.</span> <span class="nav-text">级联调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常"><span class="nav-number">10.</span> <span class="nav-text">异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类"><span class="nav-number">11.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数"><span class="nav-number">11.1.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-1"><span class="nav-number">11.2.</span> <span class="nav-text">方法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">2.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内建类型"><span class="nav-number">3.</span> <span class="nav-text">内建类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数字"><span class="nav-number">3.1.</span> <span class="nav-text">数字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">3.2.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#布尔值"><span class="nav-number">3.3.</span> <span class="nav-text">布尔值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">4.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字典"><span class="nav-number">5.</span> <span class="nav-text">字典</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符"><span class="nav-number">6.</span> <span class="nav-text">字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">7.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作符"><span class="nav-number">8.</span> <span class="nav-text">操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#级联调用"><span class="nav-number">9.</span> <span class="nav-text">级联调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常"><span class="nav-number">10.</span> <span class="nav-text">异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类"><span class="nav-number">11.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数"><span class="nav-number">11.1.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-1"><span class="nav-number">11.2.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#枚举"><span class="nav-number">12.</span> <span class="nav-text">枚举</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#混入"><span class="nav-number">13.</span> <span class="nav-text">混入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类变量和类方法"><span class="nav-number">14.</span> <span class="nav-text">类变量和类方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#泛型"><span class="nav-number">15.</span> <span class="nav-text">泛型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#库"><span class="nav-number">16.</span> <span class="nav-text">库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程"><span class="nav-number">17.</span> <span class="nav-text">多线程</span></a></li></ol></div>
             
 
           </div>

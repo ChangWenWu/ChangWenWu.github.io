@@ -501,8 +501,7 @@
 <li>重写<code>==</code>操作符时同时需要重写<code>hashcode</code>方法（getter）</li>
 <li>重写<code>nosuchMethod</code>方法后，当调用一个不存在的方法时会被触发</li>
 </ul>
-<p>##枚举</p>
-<ul>
+<h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><ul>
 <li><p>使用<code>values</code>获取枚举所有值的数组</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Color&gt; colors = Color.values;</span><br><span class="line">assert(colors[2] == Color.blue);</span><br></pre></td></tr></table></figure>
 </li>
@@ -514,8 +513,7 @@
 </ol>
 </li>
 </ul>
-<p>##混入</p>
-<ul>
+<h2 id="混入"><a href="#混入" class="headerlink" title="混入"></a>混入</h2><ul>
 <li>混入可在多个类的体系中复用一个类的代码</li>
 <li><p>使用关键词<code>with</code>，支持混入多个类</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Musician extends Performer with Musical &#123;</span><br><span class="line">  // ···</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Maestro extends Person</span><br><span class="line">    with Musical, Aggressive, Demented &#123;</span><br><span class="line">  Maestro(String maestroName) &#123;</span><br><span class="line">    name = maestroName;</span><br><span class="line">    canConduct = true;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -524,14 +522,12 @@
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mixin MusicalPerformer on Musician &#123;</span><br><span class="line">  // ···</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>##类变量和类方法</p>
-<ul>
+<h2 id="类变量和类方法"><a href="#类变量和类方法" class="headerlink" title="类变量和类方法"></a>类变量和类方法</h2><ul>
 <li>使用<code>static</code>指代类变量和类方法</li>
 <li>类变量不可访问<code>this</code></li>
 <li>类变量是编译期常量，可作为函数参数传入</li>
 </ul>
-<p>##泛型</p>
-<ul>
+<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><ul>
 <li><p>泛型类型是具体化的，运行时携带了完整的类型信息，可使用<code>is</code>判断其具体类型</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var names = List&lt;String&gt;();</span><br><span class="line">names.addAll([&apos;Seth&apos;, &apos;Kathy&apos;, &apos;Lars&apos;]);</span><br><span class="line">print(names is List&lt;String&gt;); // true</span><br></pre></td></tr></table></figure>
 </li>
@@ -548,8 +544,7 @@
 </ol>
 </li>
 </ul>
-<p>##库</p>
-<ul>
+<h2 id="库"><a href="#库" class="headerlink" title="库"></a>库</h2><ul>
 <li><p>使用<code>package:</code>做唯一标识</p>
 <p>  <code>import &#39;package:test/test.dart&#39;;</code></p>
 </li>
@@ -569,8 +564,7 @@
 </ul>
 </li>
 </ul>
-<p>##多线程</p>
-<ul>
+<h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><ul>
 <li>使用<code>async</code>和<code>await</code>支持异步编程</li>
 <li>要使用<code>await</code>，其方法须带有<code>async</code>关键字</li>
 <li>可以使用<code>try</code>，<code>catch</code>和<code>finally</code>来处理<code>await</code>的异常</li>
