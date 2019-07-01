@@ -253,6 +253,125 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/01/Throttle和Debounce的区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jarvis Wu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="吴昌文">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/01/Throttle和Debounce的区别/" itemprop="url">Throttle和Debounce的区别</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-01T17:34:26+08:00">
+                2019-07-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/12/《如何阅读一本书》读书笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1835,177 +1954,11 @@ self.blockSuperView.layer.masksToBounds = YES;
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/24/GitBucket源码阅读笔记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jarvis Wu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="吴昌文">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/24/GitBucket源码阅读笔记/" itemprop="url">GitBucket源码阅读笔记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-24T14:54:06+08:00">
-                2018-11-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/源码阅读/" itemprop="url" rel="index">
-                    <span itemprop="name">源码阅读</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>学习函数式编程已经有一个半月了，学习了RxSwift和RAC2.X，尝试过写一些小的demo，但是一直没有了解过MVVM中是如何使用RAC进行通信的，由于公司项目准备使用MVVM+RAC模式重构，在github找到了使用MVVM+RAC构建的Github开源app：<a href="https://github.com/leichunfeng/MVVMReactiveCocoa" target="_blank" rel="noopener">GitBucket</a>，本文主要记录该项目中RAC在MVVM模式中的应用。</p>
-<h1 id="项目类图"><a href="#项目类图" class="headerlink" title="项目类图"></a>项目类图</h1><p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fz9o7e3uelj30u01jhb29.jpg" alt=""><br>项目中主要有两大继承体系：MRCViewModel和MRCViewController，分别对应ViewModel层和Controller层，实现代码复用</p>
-<p>在MRCViewModel父类中存放了一些需发送给Controller层的信号，如标题变化，错误信号，控制器隐藏信号等；<br>MRCViewController中实现了监听ViewModel信号的方法，如监听ViewModel的标题变化</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">RAC(self.navigationItem, titleView) = [RACObserve(self.viewModel, titleViewType).distinctUntilChanged map:^(NSNumber *value) &#123;</span><br><span class="line">    MRCTitleViewType titleViewType = value.unsignedIntegerValue;</span><br><span class="line">    switch (titleViewType) &#123;</span><br><span class="line">        case MRCTitleViewTypeDefault:</span><br><span class="line">            return titleView;</span><br><span class="line">        case MRCTitleViewTypeDoubleTitle:</span><br><span class="line">            return (UIView *)doubleTitleView;</span><br><span class="line">        case MRCTitleViewTypeLoadingTitle:</span><br><span class="line">            return (UIView *)loadingTitleView;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
-<p>另外项目中使用了Service层提供ViewModel所需的各种服务<br>OCTClient：Github的三方库api，提供了RAC的支持<br>MRCRepositoryService/MRCRepositoryServiceImpl：应用自有的服务类<br>MRCViewModelServices：提供界面跳转的实现</p>
-<h1 id="界面跳转"><a href="#界面跳转" class="headerlink" title="界面跳转"></a>界面跳转</h1><p>作者没有使用系统提供的push/present操作实现界面跳转，而是在MRCViewModelServices中实现了一系列空操作</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">- (void)pushViewModel:(MRCViewModel *)viewModel animated:(BOOL)animated &#123;&#125;</span><br><span class="line"></span><br><span class="line">- (void)popViewModelAnimated:(BOOL)animated &#123;&#125;</span><br><span class="line"></span><br><span class="line">- (void)popToRootViewModelAnimated:(BOOL)animated &#123;&#125;</span><br><span class="line"></span><br><span class="line">- (void)presentViewModel:(MRCViewModel *)viewModel animated:(BOOL)animated completion:(VoidBlock)completion &#123;&#125;</span><br><span class="line"></span><br><span class="line">- (void)dismissViewModelAnimated:(BOOL)animated completion:(VoidBlock)completion &#123;&#125;</span><br><span class="line"></span><br><span class="line">- (void)resetRootViewModel:(MRCViewModel *)viewModel &#123;&#125;</span><br></pre></td></tr></table></figure>
-<p>之后在视图层维护了一个MRCNavigationControllerStack，通过RAC订阅Service的跳转方法的调用，提供真正的界面跳转的代码实现</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">@weakify(self)</span><br><span class="line">   [[(NSObject *)self.services</span><br><span class="line">       rac_signalForSelector:@selector(pushViewModel:animated:)]</span><br><span class="line">       subscribeNext:^(RACTuple *tuple) &#123;</span><br><span class="line">           @strongify(self)</span><br><span class="line">          </span><br><span class="line">           MRCViewController *topViewController = (MRCViewController *)[self.navigationControllers.lastObject topViewController];</span><br><span class="line">           if (topViewController.tabBarController) &#123;</span><br><span class="line">               topViewController.snapshot = [topViewController.tabBarController.view snapshotViewAfterScreenUpdates:NO];</span><br><span class="line">           &#125; else &#123;</span><br><span class="line">               topViewController.snapshot = [[self.navigationControllers.lastObject view] snapshotViewAfterScreenUpdates:NO];</span><br><span class="line">           &#125;</span><br><span class="line">           </span><br><span class="line">           UIViewController *viewController = (UIViewController *)[MRCRouter.sharedInstance viewControllerForViewModel:tuple.first];</span><br><span class="line">           viewController.hidesBottomBarWhenPushed = YES;</span><br><span class="line">           [self.navigationControllers.lastObject pushViewController:viewController animated:[tuple.second boolValue]];</span><br><span class="line">       &#125;];</span><br></pre></td></tr></table></figure>
-<p>这样Controller只需要做数据绑定即可，需要跳转界面时，ViewModel层调用service的方法，MRCNavigationControllerStack监听到方法调用后做界面跳转<br><code>[self.services pushViewModel:viewModel animated:YES];</code></p>
-<p>另外由于VM层不可引入View层的类，所以跳转的一系列方法的传参都为ViewModel，通过维护一个ViewModel与Controller层的映射字典，实现了视图与界面的分离<br><code>@property (nonatomic, copy) NSDictionary *viewModelViewMappings; // viewModel到view的映射</code></p>
-<p>#RAC用法</p>
-<p>###通过RAC提供代理的函数实现</p>
-<p>使用<code>rac_signalForSelector:fromProtocol</code>方法订阅键盘的回车键</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@weakify(self)</span><br><span class="line">[[self</span><br><span class="line">	rac_signalForSelector:@selector(textFieldShouldReturn:)</span><br><span class="line">    fromProtocol:@protocol(UITextFieldDelegate)]</span><br><span class="line">	subscribeNext:^(RACTuple *tuple) &#123;</span><br><span class="line">        @strongify(self)</span><br><span class="line">        if (tuple.first == self.passwordTextField) [self.viewModel.loginCommand execute:nil];</span><br><span class="line">    &#125;];</span><br></pre></td></tr></table></figure>
-<p>###RAC监听UI事件<br>使用<code>rac_signalForControlEvents</code>方法订阅按钮的点击信号，当按钮被点击时，执行登录的命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[[self.loginButton</span><br><span class="line">    rac_signalForControlEvents:UIControlEventTouchUpInside]</span><br><span class="line">    subscribeNext:^(id x) &#123;</span><br><span class="line">        @strongify(self)</span><br><span class="line">        [self.viewModel.loginCommand execute:nil];</span><br><span class="line">    &#125;];</span><br></pre></td></tr></table></figure>
-<p>###RAC监听通知<br>使用<code>rac_addObserverForName</code>方法订阅app从后台进入前台的通知，takeUntil保证在对象销毁后取消订阅</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[[[[NSNotificationCenter defaultCenter]</span><br><span class="line">    rac_addObserverForName:UIApplicationWillEnterForegroundNotification object:nil]</span><br><span class="line">    takeUntil:self.rac_willDeallocSignal]</span><br><span class="line">    subscribeNext:^(id x) &#123;</span><br><span class="line">        @strongify(self)</span><br><span class="line">        [self.viewModel.requestRemoteDataCommand execute:nil];</span><br><span class="line">    &#125;];</span><br></pre></td></tr></table></figure>
-<p>###RAC在TableView中的应用<br>监听ViewModel中dataSource数组的变化，dataSource发生改变时重新加载tableView</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@weakify(self)</span><br><span class="line">[[[RACObserve(self.viewModel, dataSource)</span><br><span class="line">    distinctUntilChanged]</span><br><span class="line">    deliverOnMainThread]</span><br><span class="line">    subscribeNext:^(id x) &#123;</span><br><span class="line">        @strongify(self)</span><br><span class="line">        [self reloadData];</span><br><span class="line">    &#125;];</span><br></pre></td></tr></table></figure>
-<p>刷新列表时显示loading菊花,刷新完成时隐藏</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[[[RACSignal</span><br><span class="line">    combineLatest:@[ self.viewModel.requestRemoteDataCommand.executing, RACObserve(self.viewModel, dataSource) ]</span><br><span class="line">    reduce:^(NSNumber *executing, NSArray *dataSource) &#123;</span><br><span class="line">        return @(executing.boolValue &amp;&amp; dataSource.count == 0);</span><br><span class="line">    &#125;]</span><br><span class="line">    deliverOnMainThread]</span><br><span class="line">    subscribeNext:^(NSNumber *showHUD) &#123;</span><br><span class="line">        @strongify(self)</span><br><span class="line">        if (showHUD.boolValue) &#123;</span><br><span class="line">            [MBProgressHUD showHUDAddedTo:self.view animated:YES].labelText = MBPROGRESSHUD_LABEL_TEXT;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            [MBProgressHUD hideHUDForView:self.view animated:YES];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br></pre></td></tr></table></figure>
-<p>使用rac_sequence和map将model转化为viewmodel数据源</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">- (NSArray *)dataSourceWithEvents:(NSArray *)events &#123;</span><br><span class="line">    if (events.count == 0) return nil;</span><br><span class="line">    </span><br><span class="line">    @weakify(self)</span><br><span class="line">    NSArray *viewModels = [events.rac_sequence map:^(OCTEvent *event) &#123;</span><br><span class="line">        @strongify(self)</span><br><span class="line">        MRCNewsItemViewModel *viewModel = [[MRCNewsItemViewModel alloc] initWithEvent:event];</span><br><span class="line">        viewModel.didClickLinkCommand = self.didClickLinkCommand;</span><br><span class="line">        return viewModel;</span><br><span class="line">    &#125;].array;</span><br><span class="line">    </span><br><span class="line">    return @[ viewModels ];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2051,7 +2004,7 @@ self.blockSuperView.layer.masksToBounds = YES;
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
